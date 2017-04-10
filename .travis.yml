@@ -1,0 +1,15 @@
+sudo: required
+
+language: node_js
+
+node_js:
+  - "7.8.0"
+
+services:
+  - docker
+
+install:
+  - docker build -t node-restful-api-template .
+
+script:
+  - docker run node-restful-api-template /bin/sh -c "cd /src; npm test"
