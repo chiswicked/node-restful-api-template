@@ -5,8 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+<<<<<<< HEAD
     "test": "nyc --reporter=text --reporter=html ./node_modules/mocha/bin/_mocha && codecov",
     "cover": "istanbul report text-summary lcov",
+=======
+    "test": "nyc --reporter=text --reporter=html ./node_modules/mocha/bin/_mocha",
+    "coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
+>>>>>>> c9ab21b02459d90cba9bed4bcc0aed1352418dc1
     "lint": "eslint ."
   },
   "keywords": [
