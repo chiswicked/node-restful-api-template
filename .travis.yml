@@ -12,4 +12,7 @@ install:
   - docker build -t node-restful-api-template .
 
 script:
-  - docker run node-restful-api-template /bin/sh -c "cd /src; npm test"
+  - docker run node-restful-api-template test
+
+after_success:
+  - docker run node-restful-api-template coverage

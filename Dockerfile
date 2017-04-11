@@ -17,5 +17,5 @@ ADD . /src
 
 EXPOSE 8888
 
-# Commented out auto run to test Travis CI integration
-#CMD npm start
+ENTRYPOINT ["npm", "run"]
+CMD ["start"]
