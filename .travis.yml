@@ -15,4 +15,5 @@ script:
   - docker run node-restful-api-template test
 
 after_success:
-  - docker run node-restful-api-template coverage
+  - CI_ENV="bash <(curl -s https://codecov.io/env)"
+  - docker run $CI_ENV node-restful-api-template travis-coverage
