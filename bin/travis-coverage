@@ -2,4 +2,4 @@
 
 set -e +o pipefail
 
-bash <(curl -s https://codecov.io/bash)
+nyc report --reporter=lcov > coverage.lcov && bash <(curl -s https://codecov.io/bash)
