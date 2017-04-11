@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e +o pipefail
+
+bash <(curl -s https://codecov.io/bash)
