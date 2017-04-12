@@ -2,4 +2,4 @@
 
 set -e +o pipefail
 
-npm test && bash <(curl -s https://codecov.io/bash)
+npm test && bash <(curl -s https://codecov.io/bash) && npm run lint -s
