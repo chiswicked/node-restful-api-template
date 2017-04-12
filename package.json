@@ -32,10 +32,15 @@
     "istanbul": "^0.4.5",
     "mocha": "^2.3.4",
     "nyc": "^10.2.0",
+    "pre-commit": "^1.2.2",
     "sinon": "^2.1.0"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/chiswicked/node-restful-api-template.git"
-  }
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
 }
