@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "nyc --reporter=lcov ./node_modules/mocha/bin/_mocha",
+    "test": "nyc ./node_modules/mocha/bin/_mocha",
     "coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "travis-coverage": "./bin/travis-coverage",
     "lint": "eslint ."
@@ -40,7 +40,6 @@
     "url": "git://github.com/chiswicked/node-restful-api-template.git"
   },
   "pre-commit": [
-    "lint",
     "test"
   ]
 }
