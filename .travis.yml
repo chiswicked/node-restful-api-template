@@ -8,16 +8,21 @@ node_js:
 services:
   - docker
 
+env:
+  - DOCKER_IMAGE=chiswicked/node-microservice
+
 install:
-  - docker build -t chiswicked/node-microservice .
+  - docker build -t $DOCKER_IMAGE .
 
 script:
-  - docker run chiswicked/node-microservice test
+  - docker run $DOCKER_IMAGE test
 
 after_success:
   - CI_ENV=`bash <(curl -s https://codecov.io/env)`
-  - docker run $CI_ENV node-restful-api-template travis-coverage
+  - docker run $CI_ENV $DOCKER_IMAGE travis-coverage
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push chiswicked/node-microservice:`bash ./bin/package-version`;
+    DOCKER_IMAGE_TAG=$DOCKER_IMAGE:`bash ./bin/package-version`
+    docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TAG
+    docker push $DOCKER_IMAGE_TAG;
     fi
