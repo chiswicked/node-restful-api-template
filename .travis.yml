@@ -17,9 +17,7 @@ script:
 after_success:
   - CI_ENV=`bash <(curl -s https://codecov.io/env)`
   - docker run $CI_ENV node-restful-api-template travis-coverage
-  - PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
-  - echo $PACKAGE_VERSION
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push chiswicked/node-microservice:$PACKAGE_VERSION;
+    docker push chiswicked/node-microservice:`bash ./bin/package-version`;
     fi

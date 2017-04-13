@@ -42,7 +42,7 @@
     "url": "git://github.com/chiswicked/node-restful-api-template.git"
   },
   "pre-commit": [
-    "travis-lint"
+    "travis-lint",
     "test"
   ]
 }
