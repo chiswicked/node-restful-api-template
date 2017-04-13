@@ -12,7 +12,7 @@ describe('Canary test', () => {
 });
 
 describe('GET / HTTP/1.1', () => {
-    it('should return Hello World', () => {
+    it('should return 200 OK Hello World', () => {
         chai.request(app)
             .get('/')
             .end((err, res) => {
@@ -23,3 +23,30 @@ describe('GET / HTTP/1.1', () => {
             });
     });
 });
+
+describe('POST / HTTP/1.1', () => {
+    it('should return 405 Method Not Allowed', () => {
+        chai.request(app)
+            .post('/')
+            .end((err, res) => {
+                res.should.have.status(405);
+                res.should.be.a('string');
+                res.should.equal.to('Method Not Allowed');
+                done();
+            });
+    });
+});
+
+describe('PUT / HTTP/1.1', () => {
+    it('should return 405 Method Not Allowed', () => {
+        chai.request(app)
+            .post('/')
+            .end((err, res) => {
+                res.should.have.status(405);
+                res.should.be.a('string');
+                res.should.equal.to('Method Not Allowed');
+                done();
+            });
+    });
+});
+
