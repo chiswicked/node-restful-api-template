@@ -20,4 +20,4 @@ script:
 after_success:
   - CI_ENV=`bash <(curl -s https://codecov.io/env)`
   - docker run $CI_ENV $DOCKER_IMAGE travis-coverage
-  - ./bin/push-docker-image
+  - ./bin/push-docker-image `bash ./bin/package-version`
