@@ -9,11 +9,17 @@ services:
   - docker
 
 install:
-  - docker build -t node-restful-api-template .
+  - docker build -t chiswicked/node-microservice .
 
 script:
-  - docker run node-restful-api-template test
+  - docker run chiswicked/node-microservice test
 
 after_success:
   - CI_ENV=`bash <(curl -s https://codecov.io/env)`
   - docker run $CI_ENV node-restful-api-template travis-coverage
+  - PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
+  - echo $PACKAGE_VERSION
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push chiswicked/node-microservice:$PACKAGE_VERSION;
+    fi
