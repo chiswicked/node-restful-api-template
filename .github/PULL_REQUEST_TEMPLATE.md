@@ -1,0 +1,2 @@
+- [ ] Just testing PULL_REQUEST_TEMPLATE
+- [x] More test
