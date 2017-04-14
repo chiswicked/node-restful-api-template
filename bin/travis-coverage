@@ -26,8 +26,17 @@
 
 set -e +o pipefail
 
+echo "--> Generating test coverage report"
 npm run coverage:report > coverage.lcov
+
+echo "--> Uploading coverage report to coveralls.io"
 cat coverage.lcov | coveralls
+
+echo "--> Uploading coverage report to codeclimate.com"
 cat coverage.lcov | codeclimate-test-reporter
+
+echo "--> Uploading coverage report to codecov.io"
 bash <(curl -s https://codecov.io/bash)
+
+echo "--> Linting JavaScript code"
 npm run lint:js -s
