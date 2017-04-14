@@ -26,4 +26,8 @@
 
 set -e +o pipefail
 
-npm run coverage:report | coveralls | codeclimate-test-reporter && bash <(curl -s https://codecov.io/bash) && npm run lint:js -s
+npm run coverage:report > coverage.lcov
+cat coverage.lcov | coveralls
+cat coverage.lcov | codeclimate-test-reporter
+bash <(curl -s https://codecov.io/bash)
+npm run lint:js -s
