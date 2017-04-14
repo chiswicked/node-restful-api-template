@@ -1,6 +1,6 @@
 {
   "name": "node-restful-api-template",
-  "version": "1.0.0",
+  "version": "1.0.1-0",
   "description": "NodeJS Restful API Template",
   "main": "index.js",
   "scripts": {
