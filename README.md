@@ -21,6 +21,9 @@ Node restful API template
 ## Coverall
 [![Coverage Status](https://coveralls.io/repos/github/chiswicked/node-restful-api-template/badge.svg?branch=master)](https://coveralls.io/github/chiswicked/node-restful-api-template?branch=master)
 
+## Synk
+[![Known Vulnerabilities](https://snyk.io/test/github/chiswicked/node-restful-api-template/badge.svg)](https://snyk.io/test/github/chiswicked/node-restful-api-template)
+
 ## License
 [![License: MIT](https://img.shields.io/badge/license-ISC-blue.svg?style=flat)](https://github.com/chiswicked/node-restful-api-template/blob/master/LICENSE)
 
