@@ -1,12 +1,10 @@
 {
     "extends": "airbnb-base",
     "rules": {
-        // enable additional rules
         "indent": [
             "error",
             4
         ]
-        // "quotes": ["error", "double"],
     },
     "plugins": [
         "import"

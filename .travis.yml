@@ -8,12 +8,16 @@ node_js:
 services:
   - docker
 
+env:
+  - DOCKER_IMAGE=chiswicked/node-microservice
+
 install:
-  - docker build -t node-restful-api-template .
+  - docker build -t $DOCKER_IMAGE .
 
 script:
-  - docker run node-restful-api-template test
+  - docker run $DOCKER_IMAGE test
 
 after_success:
   - CI_ENV=`bash <(curl -s https://codecov.io/env)`
-  - docker run $CI_ENV node-restful-api-template travis-coverage
+  - docker run $CI_ENV $DOCKER_IMAGE travis-coverage
+  - ./bin/push-docker-image `bash ./bin/package-version`
