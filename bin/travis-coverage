@@ -3,6 +3,6 @@
 set -e +o pipefail
 
 # npm test && bash <(curl -s https://codecov.io/bash) && npm run lint -s
-echo Username: $DOCKER_USERNAME | cut -c3-5
-echo Token: $CODECLIMATE_REPO_TOKEN | cut -c5-8
+echo $DOCKER_USERNAME | cut -c3-5
+echo $CODECLIMATE_REPO_TOKEN | cut -c5-8
 nyc npm test && nyc report --reporter=text-lcov | coveralls | codeclimate-test-reporter && bash <(curl -s https://codecov.io/bash) && npm run lint -s
