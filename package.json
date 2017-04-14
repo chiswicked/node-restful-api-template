@@ -27,6 +27,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "codeclimate-test-reporter": "^0.4.1",
     "codecov": "^2.1.0",
     "coveralls": "^2.13.0",
     "dockerlint": "^0.3.1",
