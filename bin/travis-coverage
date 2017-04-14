@@ -4,4 +4,4 @@ set -e +o pipefail
 
 # Run instide Docker container
 nyc npm test
-nyc report --reporter=text-lcov | coveralls | codeclimate-test-reporter && bash <(curl -s https://codecov.io/bash) && npm run lint -s
+nyc report --reporter=text-lcov | coveralls && bash <(curl -s https://codecov.io/bash) && npm run lint -s
