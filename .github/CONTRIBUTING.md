@@ -1,2 +1,1 @@
-- [ ] Just testing CONTRIBUTING
-- [x] More test
+How to contribute

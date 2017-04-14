@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+# Run on Travis CI
+# 
+# Uploads docker image to Docker Hub, tagged with supplied package version
+#
+# ------------------------------
+# Expected environment variables
+# 
+# $TRAVIS_BRANCH
+# $DOCKER_USERNAME
+# $DOCKER_PASSWORD
+
 set -e +o pipefail
 
 if [[ "$1" =~ [0-9]+\.[0-9]+\.[0-9]+ ]]; then
@@ -11,6 +22,8 @@ if [[ "$1" =~ [0-9]+\.[0-9]+\.[0-9]+ ]]; then
     fi
 else
     echo "Invalid parameter: $1"
-    echo "Please supply a valid package version for the Docker image"
+    echo
+    echo "Usage: push-docker-image <major.<minor>.<patch>"
+    echo
     exit 1
 fi

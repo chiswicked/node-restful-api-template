@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
+# Returns current package version (e.g '2.3.0')
+
 set -e +o pipefail
+
+if [ ! -f "package.json" ]; then
+  echo
+  echo ERROR: package.json cannot be found
+  echo
+  exit 1
+fi
 
 echo $(cat package.json \
   | grep version \

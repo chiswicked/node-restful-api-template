@@ -1,2 +1,1 @@
-- [ ] Just testing ISSUE_TEMAPLTE
-- [x] More test
+How to report issues

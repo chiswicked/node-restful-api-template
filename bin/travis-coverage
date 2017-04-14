@@ -1,7 +1,29 @@
 #!/usr/bin/env bash
 
+# Run on Travis CI
+#
+# Uploads code coverage data to Code Coverage reporting tools:
+#
+# https://coveralls.io/
+# https://codeclimate.com/
+# https://codecov.io/
+# 
+# ------------------------------
+# Expected environment variables
+# 
+# $CODECLIMATE_REPO_TOKEN
+# $CI
+# $TRAVIS
+# $SHIPPABLE
+# $TRAVIS_BRANCH
+# $TRAVIS_COMMIT
+# $TRAVIS_JOB_NUMBER
+# $TRAVIS_PULL_REQUEST
+# $TRAVIS_JOB_ID
+# $TRAVIS_REPO_SLUG
+# $TRAVIS_TAG
+# $TRAVIS_OS_NAME
+
 set -e +o pipefail
 
-# Run instide Docker container
-nyc npm test
-nyc report --reporter=text-lcov | coveralls && bash <(curl -s https://codecov.io/bash) && npm run lint -s
+npm run coverage:report | coveralls | codeclimate-test-reporter && bash <(curl -s https://codecov.io/bash) && npm run lint:js -s

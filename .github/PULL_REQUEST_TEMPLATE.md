@@ -1,2 +1,1 @@
-- [ ] Just testing PULL_REQUEST_TEMPLATE
-- [x] More test
+How to pull request
