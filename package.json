@@ -15,7 +15,7 @@
     "coverage:travis": "./bin/travis-coverage",
     "lint:travis": "travis-lint .travis.yml",
     "lint:docker": "dockerlint Dockerfile",
-    "lint:json": "jsonlint .nycrc -q && jsonlint .eslintrc -q",
+    "lint:json": "jsonlint .nycrc -q && jsonlint .eslintrc.json -q",
     "lint:js": "eslint ."
   },
   "pre-commit": [

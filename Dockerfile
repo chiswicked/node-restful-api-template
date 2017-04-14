@@ -1,11 +1,4 @@
-FROM ubuntu:16.04
-
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
-RUN apt-get install -y nodejs npm curl
-
-RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
-
-# ENV NODE_ENV production
+FROM node:7.9.0-alpine
 
 WORKDIR /src
 
