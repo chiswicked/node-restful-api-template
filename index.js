@@ -23,6 +23,10 @@ function jozsi(a) {
         console.log('four');
     } else if (a === 4) {
         console.log('five');
+    } else if (a === 5) {
+        console.log('five');
+    } else if (a === 6) {
+        console.log('five');
     }
 }
 
@@ -30,5 +34,8 @@ jozsi(1);
 jozsi(2);
 jozsi(3);
 jozsi(4);
+jozsi(5);
+jozsi(6);
+
 
 module.exports = app;
