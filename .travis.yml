@@ -18,6 +18,6 @@ script:
   - docker run $DOCKER_IMAGE test
 
 after_success:
-  - CC_REPORT_ENV=`bash <(curl -s https://codecov.io/env)` -e CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN -e CODACY_PROJECT_TOKEN=$CODACY_PROJECT_TOKEN
+  - CC_REPORT_ENV="`bash <(curl -s https://codecov.io/env)` -e CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN -e CODACY_PROJECT_TOKEN=$CODACY_PROJECT_TOKEN"
   - docker run $CC_REPORT_ENV $DOCKER_IMAGE coverage:travis -s
-  - ./bin/push-docker-image `bash ./bin/package-version`
+  # - ./bin/push-docker-image `bash ./bin/package-version`
