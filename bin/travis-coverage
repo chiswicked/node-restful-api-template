@@ -30,13 +30,16 @@ echo "--> Generating test coverage report"
 npm run coverage:report > coverage.lcov
 
 echo "--> Uploading coverage report to coveralls.io"
-cat coverage.lcov | coveralls
+coveralls < coverage.lcov
 
 echo "--> Uploading coverage report to codeclimate.com"
-cat coverage.lcov | codeclimate-test-reporter
+codeclimate-test-reporter < coverage.lcov
 
 echo "--> Uploading coverage report to codecov.io"
 bash <(curl -s https://codecov.io/bash)
+
+echo "--> Uploading coverage report to codacye.com"
+codacy-coverage < coverage.lcov
 
 echo "--> Linting JavaScript code"
 npm run lint:js -s

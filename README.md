@@ -4,6 +4,10 @@ Node restful API template
 ## Travis CI
 [![CI Status](http://img.shields.io/travis/chiswicked/node-restful-api-template.svg?style=flat)](https://travis-ci.org/chiswicked/node-restful-api-template)
 
+## Codacy
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/50fd708dbf574c4c905de2a2e3d00058)](https://www.codacy.com/app/chiswicked/node-restful-api-template)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/50fd708dbf574c4c905de2a2e3d00058)](https://www.codacy.com/app/chiswicked/node-restful-api-template)
+
 ## codebeat
 [![codebeat badge](https://codebeat.co/badges/793c1d30-a87b-4c80-8768-c7258d5738c1)](https://codebeat.co/projects/github-com-chiswicked-node-restful-api-template-master)
 
