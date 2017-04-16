@@ -38,7 +38,7 @@ codeclimate-test-reporter < coverage.lcov
 echo "--> Uploading coverage report to codecov.io"
 bash <(curl -s https://codecov.io/bash)
 
-echo "--> Uploading coverage report to codacye.com"
+echo "--> Uploading coverage report to codacy.com"
 codacy-coverage < coverage.lcov
 
 echo "--> Linting JavaScript code"
