@@ -2,7 +2,7 @@ const chai = require('chai');
 
 chai.should();
 
-const Operation = require('../../tools/operation').Operation;
+const Operation = require('../../src/tools/operation').Operation;
 
 describe('Operation', () => {
   it('should accept string and function arguments', () => {

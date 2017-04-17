@@ -3,7 +3,7 @@ chai.use(require('chai-http'));
 
 const expect = chai.expect;
 
-const app = require('../index');
+const app = require('../src/index');
 
 describe('Canary test', () => {
   it('should pass', () => {

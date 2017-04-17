@@ -8,10 +8,10 @@
   "scripts": {
     "clean": "rm -rf coverage .nyc_output",
     "clean:all": "rm -rf coverage .nyc_output node_modules",
-    "start": "node index.js",
+    "start": "node src/index.js",
     "test": "nyc --reporter=text --reporter=text-summary ./node_modules/mocha/bin/_mocha --recursive && npm run clean -s && echo",
-    "coverage": "nyc --reporter=lcov ./node_modules/mocha/bin/_mocha > /dev/null 2>&1; open coverage/lcov-report/index.html",
-    "coverage:report": "nyc --reporter=lcov ./node_modules/mocha/bin/_mocha > /dev/null 2>&1 && nyc report --reporter=text-lcov",
+    "coverage": "nyc --reporter=lcov ./node_modules/mocha/bin/_mocha --recursive > /dev/null 2>&1; open coverage/lcov-report/index.html",
+    "coverage:report": "nyc --reporter=lcov ./node_modules/mocha/bin/_mocha --recursive > /dev/null 2>&1 && nyc report --reporter=text-lcov",
     "coverage:travis": "./bin/travis-coverage",
     "lint:travis": "travis-lint .travis.yml",
     "lint:docker": "dockerlint Dockerfile",
@@ -26,7 +26,8 @@
   ],
   "dependencies": {
     "express": "^4.15.2",
-    "joi": "^10.4.1"
+    "joi": "^10.4.1",
+    "mongodb": "^2.2.25"
   },
   "devDependencies": {
     "chai": "^3.5.0",

@@ -1,4 +1,4 @@
-const Rule = require('../../models/rule').Rule;
+const Rule = require('../../src/models/rule').Rule;
 
 const chai = require('chai');
 

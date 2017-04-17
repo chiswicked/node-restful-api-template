@@ -5,7 +5,7 @@ const sinonChai = require('sinon-chai');
 chai.should();
 chai.use(sinonChai);
 
-const RuleEvaluator = require('../../tools/ruleEvaluator').RuleEvaluator;
+const RuleEvaluator = require('../../src/tools/ruleEvaluator').RuleEvaluator;
 
 describe('RuleEvaluator', () => {
   it('should accept argument to be an array', () => {

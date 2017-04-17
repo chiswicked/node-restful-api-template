@@ -1,4 +1,4 @@
-const Trigger = require('../../models/trigger').Trigger;
+const Trigger = require('../../src/models/trigger').Trigger;
 
 const chai = require('chai');
 const sinon = require('sinon');
