@@ -12,23 +12,4 @@ app.all('/', (req, res) => {
 
 app.listen(8888);
 
-function jozsi(a) {
-    if (a === 0) {
-        console.log('one');
-    } else if (a === 1) {
-        console.log('two');
-    } else if (a === 2) {
-        console.log('three');
-    } else if (a === 3) {
-        console.log('four');
-    } else if (a === 4) {
-        console.log('five');
-    }
-}
-
-jozsi(1);
-jozsi(2);
-jozsi(3);
-jozsi(4);
-
 module.exports = app;
